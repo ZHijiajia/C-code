@@ -1,27 +1,16 @@
 #include <stdio.h>
-#include <math.h>
-int main(){
-    int p,r,n,m,temp;
-	printf("请输入两个正整数n,m:");
-	scanf("%d,%d",&n,&m);
-
-	if(n<m)
+int main()
+{
+    int a,n,i=1,sn=0,tn=0;
+	printf("a,n=:");
+	scanf("%d,%d",&a,&n);
+	while(i<=n)
 	{
-	   temp=n;
-	   n=m;
-	   m=temp;
-
+	    tn=tn+a;   //赋值后的tn为i个a组成数的值
+		sn=sn+tn;  //赋值后的sn为多项式前i项之和
+		a=a*10;
+		++i;
 	}
-	p=n*m;
-			while(m!=0)
-	{
-	   r=n%m;
-	   n=m;
-	   m=r;
-
-	}
-
-	printf("它们的最大公约数为:%d\n",n);
-	printf("它们的最小公倍数为:%d\n",p/n);
+	printf("a+aa+aaa+...=%d\n",sn);
 	return 0;
 }
